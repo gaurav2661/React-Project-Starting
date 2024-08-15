@@ -8,11 +8,13 @@ import {EXAMPLES} from "./data.js";
 
 function App() {
 
-    const [selectedTopic,setSelectedTopic] = useState('Components');
+    const [selectedTopic, setSelectedTopic] = useState();
+
     function handleSelect(selectedButton) {
-        setSelectedTopic( selectedButton)
+        setSelectedTopic(selectedButton)
         console.log(selectedButton)
     }
+
     console.log("Inside APP")
     return (
         <div>
@@ -35,7 +37,7 @@ function App() {
                         <TabButton onSelect={() => handleSelect('Props')}>Props</TabButton>
                         <TabButton onSelect={() => handleSelect('State')}>State</TabButton>
                     </menu>
-                    <div id="tab-content">
+                    {!selectedTopic ? <p>Please Select a Topic</p> : <div id="tab-content">
                         <h3>{EXAMPLES[selectedTopic].title}</h3>
                         <p>{EXAMPLES[selectedTopic].description}</p>
                         <pre>
@@ -43,7 +45,7 @@ function App() {
                               {EXAMPLES[selectedTopic].code}
                             </code>
                         </pre>
-                    </div>
+                    </div>}
                 </section>
             </main>
         </div>
