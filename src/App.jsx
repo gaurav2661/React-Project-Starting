@@ -16,6 +16,14 @@ function Header() {
     </header>
 }
 
+function coreConcept() {
+    return (
+        <li>
+            <img src={}/>
+        </li>
+    )
+}
+
 function App() {
     return (
         <div>
