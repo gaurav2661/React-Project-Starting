@@ -1,3 +1,5 @@
+import "./CoreConcepts.css"
+
 // eslint-disable-next-line react/prop-types
 export default function CoreConcept({image,title,description}) {
     return (
