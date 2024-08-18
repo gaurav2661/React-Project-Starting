@@ -3,7 +3,7 @@ import {CORE_CONCEPTS} from "./data.js";
 import Header from "./components/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
-import {useState} from "react";
+import {useState,Fragment} from "react";
 import {EXAMPLES} from "./data.js";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
 
     console.log("Inside APP")
     return (
-        <div>
+        <Fragment>
             <Header></Header>
             <main>
                 <section id="core-concepts">
@@ -50,7 +50,7 @@ function App() {
                     </div>}
                 </section>
             </main>
-        </div>
+        </Fragment>
     )
 }
 
