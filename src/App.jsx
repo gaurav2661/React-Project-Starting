@@ -17,7 +17,7 @@ function App() {
 
     console.log("Inside APP")
     return (
-        <Fragment>
+        <>
             <Header></Header>
             <main>
                 <section id="core-concepts">
@@ -50,7 +50,7 @@ function App() {
                     </div>}
                 </section>
             </main>
-        </Fragment>
+        </>
     )
 }
 
