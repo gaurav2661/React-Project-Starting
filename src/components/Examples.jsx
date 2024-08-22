@@ -12,6 +12,19 @@ export default function Examples() {
         setSelectedTopic(selectedButton)
         console.log(selectedButton)
     }
+    let tabContent = <p>Please select a topic.</p>;
+
+    if (selectedTopic) {
+        tabContent = (
+            <div id="tab-content">
+                <h3>{EXAMPLES[selectedTopic].title}</h3>
+                <p>{EXAMPLES[selectedTopic].description}</p>
+                <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+            </div>
+        );
+    }
 
     return (
         <Section  title = "Examples" id="examples">
@@ -25,17 +38,8 @@ export default function Examples() {
                                onClick={() => handleSelect('Props')}>Props</TabButton>
                     <TabButton isSelected={selectedTopic === "State"}
                                onClick={() => handleSelect('State')}>State</TabButton>
-            </>}
-            >
-                {!selectedTopic ? <p>Please Select a Topic</p> : <div id="tab-content">
-                <h3>{EXAMPLES[selectedTopic].title}</h3>
-                <p>{EXAMPLES[selectedTopic].description}</p>
-                <pre>
-                    <code>
-                      {EXAMPLES[selectedTopic].code}
-                    </code>
-                </pre>
-            </div>}
+            </>}>
+                {tabContent}
             </Tabs>
         </Section>
     );
