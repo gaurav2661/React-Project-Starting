@@ -1,10 +1,11 @@
 // eslint-disable-next-line react/prop-types
-export default function Tabs({ children,buttons }) {
+export default function Tabs({ children,buttons,ButtonsContainer }) {
+    // const ButtonsContainer = buttonsContainer;
     return(
         <>
-            <menu>
+            <ButtonsContainer>
                 {buttons}
-            </menu>
+            </ButtonsContainer>
             {children}
         </>
     )
